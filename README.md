@@ -1,2 +1,2 @@
-# Dispencer
-Callisto Staking Reserve dispencer distributes the reserve in equal parts every 5 minutes to Cold Staking contract.
+# Dispenser
+Callisto Staking Reserve dispenser distributes the reserve in equal parts every 5 minutes to Cold Staking contract.
