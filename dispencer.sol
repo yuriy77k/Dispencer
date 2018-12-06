@@ -6,7 +6,7 @@ contract ColdStaking {
 
 contract Dispencer {
 
-    event Send(uint indexed _value);
+    event Send(uint indexed _time, uint indexed _value);
     event Deposit(uint indexed _value);
 
     uint public lastCall;
@@ -34,12 +34,13 @@ contract Dispencer {
     }
 
     function() public {
+        require(address(this).balance > 0); 
         require(msg.sender == caller); 
         require(now-lastCall >= 270);   // at least 270 seconds have passed since the last call.
         lastCall = now;
         uint _part = part;
         if (address(this).balance < part) _part = address(this).balance; // if not enough money, then send all that's left.
         cs.DEBUG_donation.value(_part)();
-        emit Send(_part);
+        emit Send(now, _part);
     }
 }
