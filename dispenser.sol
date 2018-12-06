@@ -4,7 +4,7 @@ contract ColdStaking {
     function DEBUG_donation() public payable;
 }
 
-contract Dispencer {
+contract Dispenser {
 
     event Send(uint indexed _time, uint indexed _value);
     event Deposit(uint indexed _value);
@@ -14,7 +14,7 @@ contract Dispencer {
     ColdStaking cs;
     address public treasury = 0x3c06f218Ce6dD8E2c535a8925A2eDF81674984D9; // Callisto Staking Reserve address.
     address public coldStaking = 0xd813419749b3c2cDc94A2F9Cfcf154113264a9d6; // Callisto Cold Staking address.
-    address public caller = 0xd2acF96E3325D85fc60dc6B6057621130e890Ceb; // dispencer caller address.
+    address public caller = 0xd2acF96E3325D85fc60dc6B6057621130e890Ceb; // dispenser caller address.
 
     modifier only_treasurer {
         require(msg.sender == treasury);
