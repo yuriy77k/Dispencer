@@ -10,7 +10,7 @@ contract Dispenser {
     event Deposit(uint indexed _value);
 
     uint public lastCall;
-    uint public part = 1947 ether; // divide the reserve into parts and send out every 5 minutes. (33649865 ether / (60 * 288))
+    uint public part = 2163 ether; // divide the reserve into parts and send out every 5 minutes. (33649865 ether / (54 * 288))
     ColdStaking cs;
     address public treasury = 0x3c06f218Ce6dD8E2c535a8925A2eDF81674984D9; // Callisto Staking Reserve address.
     address public coldStaking = 0xd813419749b3c2cDc94A2F9Cfcf154113264a9d6; // Callisto Cold Staking address.
